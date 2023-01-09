@@ -1,1 +1,1 @@
-# mern-social-media
+# MERN Social Media
