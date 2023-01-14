@@ -7,7 +7,7 @@ const logger = winston.createLogger({
         format.colorize(),
         format.timestamp(),
         format.printf((info) => {
-          return `${info.timestamp} [${info.level.toUpperCase()}] : ${JSON.stringify(
+          return `${info.timestamp} [${info.level}] : ${typeof info.message == "string" ? info.message : JSON.stringify(
             info.message
           )}`;
         })
