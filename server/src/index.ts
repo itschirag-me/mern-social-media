@@ -1,9 +1,10 @@
-import configVar, { InitCors } from './config';
+import configVar from './config';
 import express, { Application } from 'express';
 import logger from './utils/logger';
 import InitMongoConnection from './config/db';
 import ApiRoutes from './routes';
 import { handleErrors, handleNotFound } from './controller';
+import InitCors from './config/cors';
 
 const app: Application = express();
 
@@ -17,5 +18,5 @@ app
   .use(handleErrors)
   .use(handleNotFound)
   .listen(configVar.port, () => {
-    logger.info(`Server Listen on PORT : ${configVar.port}`);
+    logger.info(`Server Listen on PORT:${configVar.port}`);
   });

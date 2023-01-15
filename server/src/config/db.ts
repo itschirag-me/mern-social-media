@@ -4,6 +4,9 @@ import logger from '../utils/logger';
 
 mongoose.set('strictQuery', true);
 
+/**
+ * Connection with MongoDB
+ */
 const InitMongoConnection = async (): Promise<void> => {
   try {
     await mongoose.connect(configVar.mongoUri);

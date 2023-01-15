@@ -1,9 +1,5 @@
-import cors from 'cors';
-import * as dotenv from 'dotenv';
-import { Application } from 'express';
-import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 import path from 'path';
-import CorsOption from '../interfaces/cors';
 import logger from '../utils/logger';
 
 switch (process.env.NODE_ENV) {
@@ -21,13 +17,7 @@ switch (process.env.NODE_ENV) {
 const configVar = {
   port: process.env.PORT,
   mongoUri: process.env.MONGO_URI!,
-};
-
-export const InitCors = (app: Application) => {
-  const corsOption: CorsOption = {
-    origin: ['http://localhost:5000', 'http://localhost:3000', '*'],
-  };
-  app.use(cors(corsOption));
+  encryptKey: process.env.ENCRYPT_KEY!,
 };
 
 export default configVar;

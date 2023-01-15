@@ -1,5 +1,5 @@
 type CorsOption = {
-    origin: string[]
-}
+  origin: string[];
+};
 
 export default CorsOption;
