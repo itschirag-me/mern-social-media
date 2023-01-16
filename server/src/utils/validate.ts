@@ -21,8 +21,7 @@ export const userSchema = Joi.object({
     country: Joi.string().required(),
     pincode: Joi.number().min(6).max(6).required(),
   }),
-  isVerified: Joi.boolean(),
-  isAdmin: Joi.boolean(),
+  isVerified: Joi.boolean()
 });
 
 export const loginSchema = Joi.object({

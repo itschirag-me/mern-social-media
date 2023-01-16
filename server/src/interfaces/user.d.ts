@@ -16,7 +16,6 @@ export type User = {
   address: Address;
   password: string;
   isVerified: boolean;
-  isAdmin: boolean;
   createdAt: Date;
 
   encryptPassword(): void;
