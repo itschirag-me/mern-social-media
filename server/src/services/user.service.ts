@@ -31,8 +31,8 @@ export const GetUserByPhone = (contactNumber: string) => {
 
 /**
  * Get user document by Object Id
- * @param _id Object Id 
- * @returns 
+ * @param _id Object Id
+ * @returns
  */
 export const GetUserById = (_id: string) => {
   return User.findById(_id);
@@ -41,17 +41,17 @@ export const GetUserById = (_id: string) => {
 /**
  * Delete user by Object Id
  * @param _id Object Id
- * @returns 
+ * @returns
  */
 export const DeleteUserById = (_id: string) => {
   return User.findByIdAndDelete(_id);
 };
 
 /**
- * 
+ *
  * @param _id Object Id
  * @param payload body to change user details
- * @returns 
+ * @returns
  */
 export const UpdateUserById = (_id: string, payload: object) => {
   return User.findByIdAndUpdate(_id, payload);

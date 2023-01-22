@@ -46,6 +46,6 @@ export const handleNotFound = (
   res.status(StatusCodes.NOT_FOUND).json({
     status: 'failed',
     statusCode: StatusCodes.NOT_FOUND,
-    message: "method not found",
+    message: 'method not found',
   });
 };
