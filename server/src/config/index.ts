@@ -14,10 +14,16 @@ switch (process.env.NODE_ENV) {
     break;
 }
 
+/**
+ * Environment variables
+ */
 const configVar = {
-  port: process.env.PORT,
+  port: process.env.PORT!,
+
   mongoUri: process.env.MONGO_URI!,
+
   encryptKey: process.env.ENCRYPT_KEY!,
+  jwtSecret: process.env.JWT_SECRET!,
 };
 
 export default configVar;

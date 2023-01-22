@@ -1,5 +1,4 @@
 import Joi from 'joi';
-import { User } from '../interfaces/user';
 
 export const userSchema = Joi.object({
   name: Joi.string()
@@ -21,7 +20,7 @@ export const userSchema = Joi.object({
     country: Joi.string().required(),
     pincode: Joi.number().min(6).max(6).required(),
   }),
-  isVerified: Joi.boolean()
+  isVerified: Joi.boolean(),
 });
 
 export const loginSchema = Joi.object({

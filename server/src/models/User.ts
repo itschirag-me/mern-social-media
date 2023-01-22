@@ -1,6 +1,7 @@
 import { model, Schema } from 'mongoose';
 import UserDocument from '../interfaces/user';
 import bcrypt from 'bcrypt';
+import moment from 'moment';
 
 const userSchema = new Schema<UserDocument>({
   name: {
@@ -10,6 +11,12 @@ const userSchema = new Schema<UserDocument>({
   email: {
     type: String,
     required: true,
+    unique: true,
+  },
+  contactNumber: {
+    type: String,
+    required: true,
+    unique: true,
   },
   address: {
     type: String,
@@ -20,29 +27,37 @@ const userSchema = new Schema<UserDocument>({
     select: false,
   },
   isVerified: {
-    type: Boolean,
-    default: false,
+    email: {
+      type: Boolean,
+      default: false,
+    },
+    phone: {
+      type: Boolean,
+      default: false,
+    },
   },
   createdAt: {
     type: Date,
-    default: new Date(),
+    default: moment(),
   },
 });
 
 userSchema.methods.encryptPassword = function () {
   return new Promise((resolve, reject) => {
-    bcrypt
-      .genSalt(20)
-      .then((salt) => {
-        bcrypt
-          .hash(this.password, salt)
-          .then((hash) => {
-            this.password = hash;
-            resolve(hash);
-          })
-          .catch((error) => reject(error));
-      })
-      .catch((error) => reject(error));
+    bcrypt.genSalt(10, (error, salt) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+      bcrypt.hash(this.password, salt, (err, hash) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+        this.password = hash;
+        resolve(hash);
+      });
+    });
   });
 };
 

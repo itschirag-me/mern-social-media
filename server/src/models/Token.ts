@@ -21,9 +21,9 @@ const tokenSchema = new Schema<TokenDocument>({
 });
 
 tokenSchema.methods.expireToken = function () {
-    this.expiry = new Date()
-    return true;
-}
+  this.expiry = new Date();
+  return true;
+};
 
 const Token = model('token', tokenSchema);
 export default Token;

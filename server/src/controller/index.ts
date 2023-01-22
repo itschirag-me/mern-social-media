@@ -1,6 +1,9 @@
 import { NextFunction, Request, Response } from 'express';
 import { ReasonPhrases, StatusCodes } from 'http-status-codes';
 
+/**
+ * Controller to get Health
+ */
 export const getApiHealth = (
   req: Request,
   res: Response,
@@ -13,6 +16,9 @@ export const getApiHealth = (
   });
 };
 
+/**
+ * Controller to handle errors
+ */
 export const handleErrors = (
   error: any,
   req: Request,
@@ -29,6 +35,9 @@ export const handleErrors = (
   });
 };
 
+/**
+ * Controller to handle method not found
+ */
 export const handleNotFound = (
   req: Request,
   res: Response,
@@ -37,6 +46,6 @@ export const handleNotFound = (
   res.status(StatusCodes.NOT_FOUND).json({
     status: 'failed',
     statusCode: StatusCodes.NOT_FOUND,
-    message: ReasonPhrases.NOT_FOUND,
+    message: "method not found",
   });
 };

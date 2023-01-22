@@ -1,6 +1,6 @@
-import { Date, Document } from 'mongoose';
+import { Date, Document, ObjectId } from 'mongoose';
 
-export type Address = {
+export type AddressPayload = {
   addressLineOne: string;
   addressLineTwo: string;
   city: string;
@@ -9,19 +9,19 @@ export type Address = {
   pincode: number;
 };
 
-export type User = {
+export type UserPayload = {
   name: string;
   email: string;
-  contactNumber: number;
-  address: Address;
+  contactNumber: string;
+  address: AddressPayload;
   password: string;
   isVerified: boolean;
   createdAt: Date;
 
-  encryptPassword(): void;
+  encryptPassword(): Promise<void>;
   comparePassword(password: string): boolean;
 };
 
-type UserDocument = Document & User;
+type UserDocument = Document & UserPayload;
 
 export default UserDocument;
