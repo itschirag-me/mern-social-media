@@ -2,7 +2,7 @@ import React from 'react'
 
 const Body = () => {
   return (
-    <div>Body</div>
+    <div className='w-full text-sm p-2'>Website ka name suggest karde</div>
   )
 }
 

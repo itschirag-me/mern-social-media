@@ -5,7 +5,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      pressStart : "PressStart"
+      pressStart : "PressStart",
+      poppin: "Poppin"
     },
     extend: {
       

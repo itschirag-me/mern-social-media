@@ -7,3 +7,21 @@
   src: url(./assets/fonts/Press_Start_2P/PressStart2P-Regular.ttf);
   font-weight: 400;
 }
+
+@font-face {
+  font-family: "Poppin";
+  src: url(./assets/fonts/Poppins/Poppins-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Poppin";
+  src: url(./assets/fonts/Poppins/Poppins-Medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Poppin";
+  src: url(./assets/fonts/Poppins/Poppins-SemiBold.ttf);
+  font-weight: 600;
+}

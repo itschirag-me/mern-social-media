@@ -1,27 +1,27 @@
-import { useEffect, useState } from 'react';
-import { Router, useRoutes } from 'react-router-dom';
-import './App.css';
-import Layout from './components/Layout';
-import NotFound from './components/NotFound';
+import { useEffect } from "react";
+import { useRoutes } from "react-router-dom";
+import "./App.css";
+import Layout from "./components/Layout";
+import NotFound from "./components/NotFound";
 
 function App() {
-  const [routeList, setRouteList] = useState([
+  const routeList = [
     {
       path: "",
-      element: <Layout />
+      element: <Layout />,
     },
     {
       path: "/*",
-      element: <NotFound />
-    }
-  ])
+      element: <NotFound />,
+    },
+  ];
 
   useEffect(() => {
-    document.title = "Matcha"
-  }, [])
+    document.title = "Matcha";
+  }, []);
 
-  const element = useRoutes(routeList)
-  return element
+  const element = useRoutes(routeList);
+  return <div className="font-poppin xl:text-base lg:text-base md:text-sm text-xs">{element}</div>;
 }
 
 export default App;
