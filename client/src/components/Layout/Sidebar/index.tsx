@@ -27,7 +27,7 @@ const Sidebar = ({isOpen}: PropsWithChildren<{isOpen: boolean}>) => {
         !isOpen ? "-ml-60 absolute" : "xl:relative lg:relative md:relative absolute"
       }`}
     >
-      <div className="flex flex-col list-none">
+      <div className="flex flex-col list-none text-sm">
         {navList.map((item, index) => (
           <Link
             key={item.path}
@@ -38,10 +38,6 @@ const Sidebar = ({isOpen}: PropsWithChildren<{isOpen: boolean}>) => {
             <span className="mt-0.5 xl:text-xs lg:text-xs md:text-xs text-xs">{item.name}</span>
           </Link>
         ))}
-      </div>
-      <div className="flex items-center p-2 border-t-[0.5px] border-violet-400">
-        <span className="w-12 h-12 bg-gray-100 rounded-full"></span>
-        <span className="ml-5 uppercase font-medium text-white">Chirag raja</span>
       </div>
     </div>
   );

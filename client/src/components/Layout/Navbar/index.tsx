@@ -12,7 +12,7 @@ const Navbar = ({
       >
         <AiOutlineMenu className="text-violet-600 text-xl" />
       </span>
-      <span className="font-pressStart text-violet-500">MadChat</span>
+      <span className="font-pressStart text-violet-500 text-lg">MegaChat</span>
     </div>
   );
 };
